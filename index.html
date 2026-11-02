@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nataliem Cleaning Ltd | Cleaning Services in Calgary and Saskatoon</title>
+<meta name="description" content="Residential, commercial, post-construction, carpet, deep and move-in/move-out cleaning in Calgary and Saskatoon. Insured and bonded, eco-friendly products. Call (403) 630 6522.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0a;
+  --coal:#151412;
+  --ivory:#f7f3ea;
+  --paper:#fffdf8;
+  --gold:#c4952f;
+  --gold-hi:#e0bb55;
+  --gold-lo:#b07c10;
+  --gold-text:#85600b;
+  --line:rgba(11,11,10,.14);
+  --line-d:rgba(247,243,234,.16);
+  --head:'Archivo','Arial Black',Arial,sans-serif;
+  --body:'Manrope',system-ui,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{overflow-x:clip;font-family:var(--body);background:var(--ivory);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;line-height:1.02;letter-spacing:-.01em;font-weight:800}
+.eyebrow{font-family:var(--body);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.dark .eyebrow{color:var(--gold-hi)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;font-weight:700;font-size:.95rem;letter-spacing:.02em;border:2px solid var(--gold);transition:.25s;cursor:pointer;font-family:var(--body)}
+.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));color:var(--ink);border-color:var(--gold-lo)}
+.btn-gold:hover{background:var(--ink);color:var(--gold-hi);border-color:var(--gold-hi)}
+.btn-line{color:var(--ivory);border-color:rgba(247,243,234,.5)}
+.btn-line:hover{border-color:var(--gold-hi);color:var(--gold-hi)}
+
+/* top strip */
+.strip{background:var(--ink);color:#d9d3c4;font-size:.82rem}
+.strip .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 0;flex-wrap:wrap}
+.strip a:hover{color:var(--gold-hi)}
+.strip .l,.strip .r{display:flex;gap:26px;flex-wrap:wrap}
+.strip b{color:var(--gold-hi);font-weight:700}
+
+/* header */
+header.site{background:var(--ivory);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0}
+.brand img{width:230px;height:auto}
+nav.main ul{display:flex;gap:30px;align-items:center}
+nav.main a{font-weight:600;font-size:.92rem;position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:.25s}
+nav.main a:hover::after{width:100%}
+.nav-cta{padding:12px 22px;font-size:.85rem}
+.menu-btn{display:none;background:none;border:2px solid var(--ink);padding:9px 12px;font-weight:700;font-family:var(--body);cursor:pointer}
+
+/* hero */
+.hero{background:var(--ink);color:var(--ivory);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:end;padding-top:84px}
+.hero-copy{padding-bottom:84px;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.9rem);margin:22px 0 26px;text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 .g{background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.1rem;color:#d9d3c4;max-width:34rem}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 38px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.88rem;color:#cfc8b6}
+.facts li{display:flex;align-items:center;gap:9px}
+.facts svg{width:16px;height:16px;color:var(--gold-hi);flex:none}
+.hero-photo{position:relative;align-self:stretch;min-height:560px}
+.hero-photo .ph{position:absolute;inset:0;background:url(assets/hero-cleaner.webp) 38% center/cover;
+  clip-path:polygon(0 100%,0 38%,14% 38%,14% 22%,30% 22%,30% 8%,46% 8%,46% 0,64% 0,64% 16%,80% 16%,80% 30%,100% 30%,100% 100%)}
+.hero-photo .tag{position:absolute;left:-22px;bottom:34px;background:var(--gold);color:var(--ink);padding:18px 22px;max-width:230px;z-index:3;box-shadow:12px 12px 0 rgba(0,0,0,.4)}
+.tag b{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-size:2.4rem;line-height:1;display:block;font-weight:900}
+.tag span{font-size:.8rem;font-weight:700;letter-spacing:.04em}
+
+/* services - ledger */
+.services{padding:120px 0 110px;background:var(--paper)}
+.sv-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+.sv-head h2{font-size:clamp(2rem,3.8vw,3.4rem)}
+.sv-head p{color:#4a463d;max-width:30rem;justify-self:end}
+.ledger{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.sv-view{position:sticky;top:110px;aspect-ratio:4/5;background:var(--ink);overflow:hidden}
+.sv-view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .5s,transform .8s}
+.sv-view img.on{opacity:1;transform:scale(1)}
+.sv-view::after{content:"";position:absolute;left:0;bottom:0;width:38%;height:10px;background:var(--gold)}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:68px 1fr 44px;gap:18px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start;cursor:pointer;transition:.25s}
+.row .n{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-weight:800;font-size:1.05rem;color:var(--gold-text);padding-top:6px}
+.row h3{font-size:clamp(1.25rem,2vw,1.75rem);margin-bottom:8px}
+.row p{color:#4a463d;font-size:.96rem;max-width:36rem}
+.row .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.row .tags span{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:4px 10px;color:#4a463d}
+.row .go{width:44px;height:44px;border:1.5px solid var(--ink);display:grid;place-items:center;transition:.25s}
+.row .go svg{width:18px;height:18px;transition:.25s}
+.row:hover,.row.on{padding-left:14px;background:linear-gradient(90deg,rgba(196,149,47,.14),transparent)}
+.row:hover .go,.row.on .go{background:var(--ink);color:var(--gold-hi)}
+.row .m{display:none}
+
+/* promo */
+.promo{position:relative;background:#e9efee url(assets/promo.webp) right center/cover no-repeat;color:var(--ink);overflow:hidden}
+.promo::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#e9efee 0,#e9efee 46%,rgba(233,239,238,.85) 56%,rgba(233,239,238,0) 74%)}
+.promo .wrap{position:relative}
+.promo .wrap{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;padding:78px 0}
+.promo .big{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-weight:900;font-size:clamp(5rem,12vw,10rem);line-height:.8;color:var(--ink);position:relative}
+.promo .big small{font-size:.3em;letter-spacing:.04em;vertical-align:top;margin-left:6px;color:var(--gold-text)}
+.promo h2{font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:12px;max-width:19ch}
+.promo p{max-width:26rem;margin-bottom:24px;color:#2a2823}
+
+/* about */
+.about{padding:130px 0;background:var(--ivory)}
+.about .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:90px;align-items:center}
+.about-photo{position:relative}
+.about-photo img{width:100%;aspect-ratio:1/1.08;object-fit:cover}
+.about-photo::before{content:"";position:absolute;inset:26px -26px -26px 26px;border:2px solid var(--gold);z-index:-1}
+.about-photo .badge{position:absolute;right:-18px;top:30px;background:var(--ink);color:var(--ivory);padding:18px 22px;text-align:center}
+.badge b{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-size:2.6rem;color:var(--gold-hi);display:block;line-height:1;font-weight:900}
+.badge span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.about h2{font-size:clamp(1.9rem,3.4vw,3rem);margin:20px 0 22px}
+.about .txt p{color:#3f3b33;margin-bottom:16px;max-width:34rem}
+.why{display:grid;grid-template-columns:1fr 1fr;margin-top:34px;border-top:2px solid var(--ink)}
+.why div{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
+.why div:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+.why b{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-size:2.1rem;font-weight:900;color:var(--gold-text);display:block;line-height:1}
+.why span{font-size:.88rem;font-weight:600;display:block;margin-top:8px}
+
+/* process - stair */
+.process{background:var(--coal);color:var(--ivory);padding:120px 0 0;overflow:hidden}
+.process h2{font-size:clamp(2rem,4vw,3.5rem)}
+.process .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.process .top p{max-width:26rem;color:#cfc8b6}
+.stairs{display:grid;grid-template-columns:repeat(3,1fr);align-items:end;margin-top:70px}
+.step{border-left:1px solid var(--line-d);padding:34px 30px 40px;position:relative;background:linear-gradient(180deg,rgba(196,149,47,.0),rgba(196,149,47,.1))}
+.step:nth-child(1){min-height:250px}
+.step:nth-child(2){min-height:340px}
+.step:nth-child(3){min-height:430px;padding:0;display:flex;flex-direction:column;justify-content:flex-end;background:var(--gold);color:var(--ink)}
+.step .n{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-weight:900;font-size:4.2rem;line-height:1;color:var(--gold-hi);opacity:.9}
+.step h3{font-size:1.4rem;margin:14px 0 10px}
+.step p{color:#cfc8b6;font-size:.95rem;max-width:20rem}
+.step:nth-child(3) .in{padding:34px 30px 40px}
+.step:nth-child(3) .n{color:var(--ink)}
+.step:nth-child(3) p{color:#2a2410}
+.step:nth-child(3) img{width:100%;flex:1;min-height:190px;object-fit:cover;object-position:center 40%}
+
+/* local work / reviews */
+.work{padding:120px 0;background:var(--paper)}
+.work-head{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
+.work-head h2{font-size:clamp(2rem,3.8vw,3.4rem);margin-top:18px}
+.score{justify-self:end;text-align:right}
+.score .stars{color:var(--gold);font-size:1.5rem;letter-spacing:4px}
+.score b{display:block;font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;font-size:1.6rem;font-weight:800}
+.score span{font-size:.85rem;color:#4a463d}
+.cases{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border-top:2px solid var(--ink)}
+.feature{padding:44px 48px 44px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-start;gap:30px}
+.feature .place{display:inline-block;background:var(--ink);color:var(--gold-hi);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px}
+.feature blockquote{font-family:var(--head);font-stretch:112%;font-variation-settings:"wdth" 112;font-weight:700;font-size:clamp(1.5rem,2.5vw,2.2rem);line-height:1.2;margin-top:22px}
+.feature img{width:100%;height:230px;object-fit:cover}
+.who{font-size:.9rem;font-weight:700}
+.who span{display:block;font-weight:500;color:#5a5548}
+.list .item{padding:26px 0 26px 40px;border-bottom:1px solid var(--line)}
+.list .item:last-child{border-bottom:0}
+.list .job{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text)}
+.list q{display:block;quotes:"\201C" "\201D";font-size:1.02rem;font-weight:500;margin:8px 0 10px}
+.list .by{font-size:.85rem;color:#5a5548}
+.list .by b{color:var(--ink)}
+
+/* area */
+.area{background:var(--ink);color:var(--ivory);padding:120px 0}
+.area .wrap{display:grid;grid-template-columns:1.05fr .8fr;gap:80px;align-items:center}
+.area h2{font-size:clamp(1.9rem,3.4vw,3rem);margin:18px 0 22px}
+.area p{color:#cfc8b6;max-width:32rem}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:36px}
+.zones h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:10px;grid-column:1/-1}
+.zones li{padding:11px 0;border-bottom:1px solid var(--line-d);font-weight:600;display:flex;justify-content:space-between}
+.zones li::after{content:"→";color:var(--gold-hi)}
+.zones .gap{height:30px;grid-column:1/-1}
+.map{position:relative;justify-self:center;max-width:380px;width:100%}
+.map img{width:100%;background:#fff;padding:14px;border:2px solid var(--gold)}
+.map::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:-1}
+
+/* contact */
+.contact{padding:120px 0;background:var(--ivory)}
+.contact .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
+.contact h2{font-size:clamp(1.9rem,3.4vw,3rem);margin:18px 0 20px}
+.contact .info p{max-width:26rem;color:#3f3b33;margin-bottom:34px}
+.cl li{display:grid;grid-template-columns:96px 1fr;padding:15px 0;border-top:1px solid var(--line);font-size:.96rem}
+.cl li:last-child{border-bottom:1px solid var(--line)}
+.cl li span{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);padding-top:3px}
+.cl a:hover{color:var(--gold-text)}
+form{background:var(--paper);border:1px solid var(--line);padding:44px;box-shadow:14px 14px 0 var(--gold)}
+form .g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form label{display:block;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+form .f{margin-bottom:20px}
+form input,form select,form textarea{width:100%;padding:14px 14px;border:1.5px solid rgba(11,11,10,.3);background:#fff;font:inherit;color:var(--ink);border-radius:0}
+form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--gold-lo);box-shadow:0 0 0 3px rgba(196,149,47,.25)}
+form textarea{min-height:120px;resize:vertical}
+
+/* footer */
+footer.site{background:var(--ink);color:#cfc8b6;padding:90px 0 0;border-top:6px solid var(--gold)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr;gap:50px;padding-bottom:64px}
+.fgrid img{width:240px;margin-bottom:20px}
+.fgrid h5{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;color:var(--ivory);font-size:.95rem;margin-bottom:18px;text-transform:uppercase;letter-spacing:.04em}
+.fgrid li{margin-bottom:10px;font-size:.93rem}
+.fgrid a:hover{color:var(--gold-hi)}
+.fgrid .tagline{font-family:var(--head);font-stretch:125%;font-variation-settings:"wdth" 125;color:var(--gold-hi);font-weight:700;margin-bottom:14px}
+.soc{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.soc a{border:1px solid var(--line-d);padding:8px 14px;font-size:.8rem;font-weight:700}
+.soc a:hover{border-color:var(--gold-hi);color:var(--gold-hi)}
+.legal{border-top:1px solid var(--line-d);padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem}
+.legal a{color:var(--gold-hi);font-weight:700}
+.legal a:hover{text-decoration:underline}
+
+/* motion */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.js .rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:1020px){
+  nav.main{position:absolute;left:0;right:0;top:100%;background:var(--ivory);border-bottom:1px solid var(--line);display:none;padding:12px 24px 24px}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;align-items:flex-start;gap:6px}
+  nav.main a{display:block;padding:10px 0}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-top:60px;gap:0}
+  .hero-copy{padding-bottom:50px}
+  .hero-photo{min-height:420px}
+  .hero-photo .tag{left:12px}
+  .sv-head,.work-head,.about .wrap,.area .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
+  .sv-head p,.score{justify-self:start;text-align:left}
+  .ledger{grid-template-columns:1fr}
+  .sv-view{display:none}
+  .row{grid-template-columns:48px 1fr 40px}
+  .row .m{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin-top:16px;grid-column:2/3}
+  .about,.work,.contact,.services,.area{padding:80px 0}
+  .stairs{grid-template-columns:1fr}
+  .step:nth-child(n){min-height:0}
+  .cases{grid-template-columns:1fr}
+  .feature{padding:36px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .list .item{padding-left:0}
+  .promo .wrap{grid-template-columns:1fr;gap:20px;padding:56px 0}
+  .promo{background-position:70% center}
+  .promo::before{background:linear-gradient(90deg,rgba(233,239,238,.95),rgba(233,239,238,.75))}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .about-photo::before{inset:16px -10px -16px 16px}
+  .about-photo .badge{right:8px}
+}
+@media(max-width:620px){
+  .wrap{width:min(100% - 32px,1240px)}
+  .strip .r{display:none}
+  .brand img{width:170px}
+  form{padding:26px 20px;box-shadow:8px 8px 0 var(--gold)}
+  form .g2{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr}
+  .why div:nth-child(even){padding-left:0;border-left:0}
+  .zones{grid-template-columns:1fr}
+  .hero-photo{min-height:340px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="l"><span><b>Open</b> 6:00 AM to 11:00 PM</span><span>Late last-minute jobs welcome, just call</span></div>
+    <div class="r"><a href="tel:+14036306522">(403) 630 6522</a><a href="mailto:info@nataliemcleaning.com">info@nataliemcleaning.com</a></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Nataliem Cleaning Ltd home"><img src="assets/logo.webp" alt="Nataliem Cleaning Ltd" width="230" height="61"></a>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Gallery</a></li>
+        <li><a href="#faq-link">FAQ</a></li>
+        <li><a href="#blog-link">Blogs</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold nav-cta" href="#contact">Get a Free Quote</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero dark">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Cleaning services in Calgary and Saskatoon</div>
+      <h1><span>Simplify life.</span><span class="g">Relax fully.</span><span>Enjoy freely.</span></h1>
+      <p class="lead">Life's too short to clean your own home. Our trusted team handles homes, offices, carpets, renovations and moves, so you save time, save money and save yourself.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="#contact">Get a Free Quote</a>
+        <a class="btn btn-line" href="tel:+14036306522">Call (403) 630 6522</a>
+      </div>
+      <ul class="facts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 7"/></svg>Insured &amp; bonded</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 7"/></svg>Eco-friendly products</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 7"/></svg>Safe for kids and pets</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 7"/></svg>10+ years of experience</li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <div class="ph" role="img" aria-label="Cleaner wiping a shelf with pink gloves"></div>
+      <div class="tag"><b>20% off</b><span>for new customers on their first cleaning</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sv-head rv">
+      <div>
+        <div class="eyebrow">What we clean</div>
+        <h2 style="margin-top:18px">Five services.<br>One reliable crew.</h2>
+      </div>
+      <p>Residential, commercial, post-construction, carpet, deep and move-in/move-out cleaning, booked the easy way and finished properly.</p>
+    </div>
+    <div class="ledger">
+      <div class="sv-view" aria-hidden="true">
+        <img class="on" src="assets/post-construction.webp" alt="" data-i="0">
+        <img src="assets/office.webp" alt="" data-i="1">
+        <img src="assets/carpet.webp" alt="" data-i="2">
+        <img src="assets/deep-clean.webp" alt="" data-i="3">
+        <img src="assets/move.webp" alt="" data-i="4">
+      </div>
+      <div class="rows">
+        <a class="row on rv" href="#contact" data-i="0">
+          <span class="n">01</span>
+          <div>
+            <h3>Post Construction / Renovation Cleaning</h3>
+            <p>The end of a build or renovation is a thrilling moment. We clear the dust and debris so you can see your vision come to life.</p>
+            <div class="tags"><span>Dust &amp; debris</span><span>Final clean</span></div>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="m" src="assets/post-construction.webp" alt="Newly renovated kitchen ready for post construction cleaning" loading="lazy">
+        </a>
+        <a class="row rv" href="#contact" data-i="1">
+          <span class="n">02</span>
+          <div>
+            <h3>Office / Commercial Space Cleaning</h3>
+            <p>A clean and organized workspace fosters productivity. We keep your offices and commercial spaces sharp for staff and clients.</p>
+            <div class="tags"><span>Offices</span><span>Commercial</span></div>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="m" src="assets/office.webp" alt="Cleaners vacuuming an open-plan office" loading="lazy">
+        </a>
+        <a class="row rv" href="#contact" data-i="2">
+          <span class="n">03</span>
+          <div>
+            <h3>Carpet Cleaning</h3>
+            <p>Clean carpets matter for more than looks. They are part of your health and comfort at home or at work.</p>
+            <div class="tags"><span>Residential</span><span>Commercial</span></div>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="m" src="assets/carpet.webp" alt="Technician steam cleaning a carpet" loading="lazy">
+        </a>
+        <a class="row rv" href="#contact" data-i="3">
+          <span class="n">04</span>
+          <div>
+            <h3>Deep Clean / Standard Cleaning</h3>
+            <p>A full restorative deep clean or a regular maintenance visit, designed around what your home actually needs.</p>
+            <div class="tags"><span>Residential</span><span>Recurring</span></div>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="m" src="assets/deep-clean.webp" alt="Hand wiping down a surface with a blue cloth" loading="lazy">
+        </a>
+        <a class="row rv" href="#contact" data-i="4">
+          <span class="n">05</span>
+          <div>
+            <h3>Move-In / Move-Out Cleaning</h3>
+            <p>Our move-in and move-out cleaning is here to make the transition seamless, whether you are leaving a place or arriving at one.</p>
+            <div class="tags"><span>Move-out</span><span>Move-in</span></div>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <img class="m" src="assets/move.webp" alt="Packed boxes in a living room before a move" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo" aria-label="New customer offer">
+  <div class="wrap">
+    <div class="big rv">20<small>% OFF</small></div>
+    <div class="rv">
+      <h2>Your first cleaning, up to 20% off.</h2>
+      <p>New customers get up to 20% off their first cleaning. Book by phone, email or the quote form.</p>
+      <a class="btn btn-gold" href="#contact">Claim Promo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-photo rv">
+      <img src="assets/team.webp" alt="Two Nataliem cleaners smiling while cleaning a modern office" loading="lazy">
+      <div class="badge"><b>10+</b><span>Years of<br>experience</span></div>
+    </div>
+    <div class="txt rv">
+      <div class="eyebrow">About Nataliem Cleaning</div>
+      <h2>Clean, healthy spaces, every day.</h2>
+      <p>We are your trusted partner for a healthier, cleaner home, and we are proud to serve both Calgary and Saskatoon, including the surrounding areas.</p>
+      <p>We disinfect and sanitize as we clean, using eco-friendly products that eliminate bacteria and germs within just 30 seconds. They are safe for kids and pets.</p>
+      <div class="why">
+        <div><b>100%</b><span>Satisfaction, our commitment to you</span></div>
+        <div><b>30 sec</b><span>Eco-friendly products that eliminate germs</span></div>
+        <div><b>10+</b><span>Years of experience</span></div>
+        <div><b>Certified</b><span>Team of trained expert cleaners</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process dark">
+  <div class="wrap">
+    <div class="top rv">
+      <div>
+        <div class="eyebrow">How booking works</div>
+        <h2 style="margin-top:18px">We clean. You relax.</h2>
+      </div>
+      <p>Three steps from first message to a spotless space. Contact us by phone, email or the quote form.</p>
+    </div>
+    <div class="stairs">
+      <div class="step rv">
+        <div class="n">01</div>
+        <h3>Book Appointment</h3>
+        <p>Contact us by phone, email or the quote form and tell us what you need.</p>
+      </div>
+      <div class="step rv">
+        <div class="n">02</div>
+        <h3>Get Confirmation</h3>
+        <p>A confirmation email lands in your inbox with all your booking details.</p>
+      </div>
+      <div class="step rv">
+        <img src="assets/relax.webp" alt="Woman relaxing on a sofa in a clean, bright room" loading="lazy">
+        <div class="in">
+          <div class="n">03</div>
+          <h3>Relax, It's Done!</h3>
+          <p>Put your feet up. We take care of the rest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head rv">
+      <div>
+        <div class="eyebrow">Recent work across Calgary</div>
+        <h2>Real jobs, in our clients' words.</h2>
+      </div>
+      <div class="score">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <b>Excellent</b>
+        <span>Based on 84 Google reviews</span>
+      </div>
+    </div>
+    <div class="cases rv">
+      <div class="feature">
+        <div>
+          <span class="place">Mahogany · Pre-listing clean</span>
+          <blockquote>&ldquo;I reached out on very short notice for a pre-listing clean in Mahogany.&rdquo;</blockquote>
+        </div>
+        <img src="assets/kitchen.webp" alt="Bright, freshly cleaned kitchen and staircase" loading="lazy">
+        <div class="who">Christy Pinkerton<span>Google review</span></div>
+      </div>
+      <div class="list">
+        <div class="item">
+          <div class="job">Rockland Park · Deep clean</div>
+          <q>Stellar job by the team deep cleaning our house in Rockland Park.</q>
+          <div class="by"><b>Kevin Shi</b> · Google review</div>
+        </div>
+        <div class="item">
+          <div class="job">Aspenwood · Pre-listing &amp; windows</div>
+          <q>They also handled interior and exterior window cleaning using a pure water-fed pole system.</q>
+          <div class="by"><b>berhane gebre</b> · Google review</div>
+        </div>
+        <div class="item">
+          <div class="job">2,400 sq ft house · Deep clean</div>
+          <q>They were very thorough and everything looked sparkling clean after they were done.</q>
+          <div class="by"><b>Kamlesh Sharma</b> · Google review</div>
+        </div>
+        <div class="item">
+          <div class="job">Bowness NW · Regular service</div>
+          <q>They are thorough, professional, and genuinely care about the people here.</q>
+          <div class="by"><b>Fran Fisher</b> · Google review</div>
+        </div>
+        <div class="item">
+          <div class="job">Recurring clients</div>
+          <q>The house is always left in pristine condition after they visit.</q>
+          <div class="by"><b>Denny Townsend</b> · Google review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area dark">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Service area</div>
+      <h2>Across Calgary, and the towns around it.</h2>
+      <p>We also serve Saskatoon and its surrounding areas.</p>
+      <div class="zones">
+        <h4>Calgary</h4>
+        <ul>
+          <li>Downtown &amp; Inner City</li>
+          <li>Northwest</li>
+          <li>Southwest</li>
+        </ul>
+        <ul>
+          <li>Northeast</li>
+          <li>Southeast</li>
+        </ul>
+        <div class="gap"></div>
+        <h4>Surrounding communities</h4>
+        <ul>
+          <li>Airdrie</li>
+          <li>Chestermere</li>
+        </ul>
+        <ul>
+          <li>Cochrane</li>
+          <li>Okotoks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="map rv">
+      <img src="assets/service-area-map.webp" alt="Map of Nataliem Cleaning service areas across Calgary, Airdrie, Chestermere, Cochrane and Okotoks" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="info rv">
+      <div class="eyebrow">Free quote</div>
+      <h2>Tell us what needs cleaning.</h2>
+      <p>Send the details and we will confirm your booking by email. Prefer to talk? Call us any time between 6:00 AM and 11:00 PM.</p>
+      <ul class="cl">
+        <li><span>Phone</span><a href="tel:+14036306522">(403) 630 6522</a></li>
+        <li><span>Email</span><a href="mailto:info@nataliemcleaning.com">info@nataliemcleaning.com</a></li>
+        <li><span>Office</span><div>300-1000 9 AVE SW, Calgary, Alberta T2P 2Y6</div></li>
+        <li><span>Hours</span><div>6:00 AM to 11:00 PM</div></li>
+      </ul>
+    </div>
+    <form class="rv" id="quote" action="#" method="post">
+      <div class="g2">
+        <div class="f"><label for="n">Name</label><input id="n" name="name" type="text" required autocomplete="name"></div>
+        <div class="f"><label for="p">Phone</label><input id="p" name="phone" type="tel" required autocomplete="tel"></div>
+      </div>
+      <div class="f"><label for="e">Email</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+      <div class="f"><label for="s">Subject</label>
+        <select id="s" name="subject">
+          <option>Deep Clean / Standard Cleaning</option>
+          <option>Move-In / Move-Out Cleaning</option>
+          <option>Post Construction Cleaning / Post Renovation Cleaning</option>
+          <option>Office / Commercial Space Cleaning</option>
+          <option>Carpet Cleaning</option>
+        </select>
+      </div>
+      <div class="g2">
+        <div class="f"><label for="a">Address</label><input id="a" name="address" type="text" autocomplete="street-address"></div>
+        <div class="f"><label for="d">Service date</label><input id="d" name="date" type="date"></div>
+      </div>
+      <div class="f"><label for="m">Message</label><textarea id="m" name="message"></textarea></div>
+      <button class="btn btn-gold" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site dark">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="assets/logo-white.webp" alt="Nataliem Cleaning Ltd" width="240" height="64" loading="lazy">
+        <div class="tagline">Cleaning your worries away!</div>
+        <div class="soc">
+          <a href="https://www.facebook.com/share/1C5gzopRNs/" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/nataliem_cleaning_ltd" rel="noopener">Instagram</a>
+          <a href="https://wa.me/14036306522" rel="noopener">WhatsApp</a>
+          <a href="https://www.tiktok.com/@nataliem.cleaning" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Gallery</a></li>
+          <li><a href="#blog-link">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Carpet Cleaning</a></li>
+          <li><a href="#services">Office / Commercial Cleaning</a></li>
+          <li><a href="#services">Move-In / Move-Out Cleaning</a></li>
+          <li><a href="#services">Deep Cleaning / Standard Cleaning</a></li>
+          <li><a href="#services">Post Construction / Renovation Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>300-1000 9 AVE SW,<br>Calgary, Alberta T2P 2Y6</li>
+          <li><a href="mailto:info@nataliemcleaning.com">info@nataliemcleaning.com</a></li>
+          <li><a href="tel:+14036306522">(403) 630 6522</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Nataliem Cleaning LTD, All rights reserved.</span>
+      <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var rows=[].slice.call(document.querySelectorAll('.row'));
+  var imgs=[].slice.call(document.querySelectorAll('.sv-view img'));
+  function set(i){rows.forEach(function(r,k){r.classList.toggle('on',k==i)});imgs.forEach(function(m,k){m.classList.toggle('on',k==i)})}
+  rows.forEach(function(r){r.addEventListener('mouseenter',function(){set(+r.dataset.i)});r.addEventListener('focus',function(){set(+r.dataset.i)})});
+  var mb=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName=='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else {els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
